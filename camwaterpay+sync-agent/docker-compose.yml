@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  sync-agent:
+    build: .
+    container_name: camwater-sync-agent
+    env_file:
+      - .env
+    environment:
+      - SYNC_MODE=daemon   # or cron / once
+    volumes:
+      - ./data:/data        # persists state.json
+      # Bind your app's SQLite DB into /data
+      # - ../backend/camwater.db:/data/camwater.db:ro
+    restart: unless-stopped

@@ -1,0 +1,2 @@
+# Run the sync once every 5 minutes (container local time)
+*/5 * * * * root cd /app && python3 /app/sync_agent.py --once >> /var/log/cron.log 2>&1

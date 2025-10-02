@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.camwater.payplus.nfcbridge">
+  <uses-permission android:name="android.permission.NFC"/>
+  <application android:label="NFC Bridge" android:allowBackup="true">
+    <activity android:name=".MainActivity" android:exported="true">
+      <intent-filter android:autoVerify="true">
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="camwaterpay" android:host="write" />
+      </intent-filter>
+    </activity>
+  </application>
+</manifest>
